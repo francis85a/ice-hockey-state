@@ -11,9 +11,8 @@ class Equipo:
 
     def añadir_jugador(self,jugadora):
 
-        self._jugadores.append(jugadora)
-    
-        
+        self._jugadores[jugadora.dorsal] = jugadora
+
     def listar_jugadores(self):
         print(self._jugadores)
 
