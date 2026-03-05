@@ -1,5 +1,5 @@
 from src.posicion import Posicion
-
+from src.estado import Estado_jugador, Jugador_activo, Jugador_inactivo
 class Jugadora:
 
     def __init__(self, dorsal:int, nombre:str, posicion: Posicion):
@@ -8,7 +8,7 @@ class Jugadora:
         self.posicion: Posicion = posicion
         self._goles = 0
         self._asistencias = 0
-        self._estado = "ACTIVA"
+        self._estado: Estado_jugador = Jugador_activo()
 
     @property
     def dorsal(self):
@@ -28,14 +28,18 @@ class Jugadora:
 
     @property
     def es_activo(self):
-        return self._estado == "ACTIVA"
-
+        return isinstance(self._estado, Jugador_activo)
     
-    #def registrar_gol(self, goles):
-    #    self.goles = goles
-    #    ACTIVA = True
-    #    INACTIVA = False
-    #    if Jugadora is ACTIVA:
-    #        goles + 1
-    #    else:
-    #        INACTIVA
+    def registrar_gol(self):
+        self._estado.registrar_gol(self)
+    
+    def registrar_asistencia(self):
+        self._estado.registrar_asistencia(self)
+        
+    def sancionar(self, minutos: int):
+        self._estado = Jugador_inactivo()
+        self._minutos_sancion = minutos
+
+
+    def liberar(self):
+        self._estado = Jugador_activo()
