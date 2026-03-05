@@ -1,18 +1,41 @@
-from src.equipo import Equipo
+from src.posicion import Posicion
 
-class Jugadora(Equipo):
+class Jugadora:
 
-    def __init__(self, dorsal:int, nombre:str, posicion, goles):
+    def __init__(self, dorsal:int, nombre:str, posicion: Posicion):
         self._dorsal = dorsal
         self._nombre = nombre
-        self.Posicion = posicion
-        self._goles = goles
+        self.posicion: Posicion = posicion
+        self._goles = 0
+        self._asistencias = 0
+        self._estado = "ACTIVA"
+
+    @property
+    def dorsal(self):
+        return self._dorsal
     
-    def registrar_gol(self, goles):
-        self.goles = goles
-        ACTIVA = True
-        INACTIVA = False
-        if Jugadora is ACTIVA:
-            goles + 1
-        else:
-            INACTIVA
+    @property
+    def nombre(self):
+        return self._nombre
+    
+    @property
+    def goles(self):
+        return self._goles
+    
+    @property
+    def asistencias(self):
+        return self._asistencias
+
+    @property
+    def es_activo(self):
+        return self._estado == "ACTIVA"
+
+    
+    #def registrar_gol(self, goles):
+    #    self.goles = goles
+    #    ACTIVA = True
+    #    INACTIVA = False
+    #    if Jugadora is ACTIVA:
+    #        goles + 1
+    #    else:
+    #        INACTIVA
