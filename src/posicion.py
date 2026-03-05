@@ -1,5 +1,6 @@
-from src.jugadora import Jugadora
-class Posicion(Jugadora):
+from enum import Enum
+
+class Posicion(Enum):
         
         CENTER = "CENTER"
         LEFTWING = "LEFTWING"
