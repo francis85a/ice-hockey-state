@@ -1,15 +1,13 @@
+from src.jugadora import Jugadora
+
 class Equipo:
     def __init__(self, nombre : str):
         self._nombre = nombre
-        self._jugadores = []
+        self._jugadores: dict[int, Jugadora] = {}
 
     @property
-    def nombre(self, nombre):
-        self.nombre = nombre
-
-    @property
-    def ciudad(self,ciudad):
-        self.ciudad = ciudad
+    def nombre(self):
+        return self._nombre
 
     def añadir_jugador(self,jugadora):
 
