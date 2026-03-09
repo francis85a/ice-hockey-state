@@ -26,10 +26,11 @@ class Equipo:
         return self._jugadores[dorsal]
     
     def jugadores_activos(self):
+        activas = []
         for jugadora in self._jugadores.values():
             if jugadora.es_activo:
-                return jugadora
-        return None
+                activas.append(jugadora)
+        return activas
     
     def total_goles(self):
         jugadoras= list(self._jugadores.values())

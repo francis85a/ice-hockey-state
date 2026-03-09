@@ -67,73 +67,73 @@ def main() -> None:
 #
     ## -----------------------------------------------------------------------
     ## Historia de usuario 2 — Sanción a jugadora de USA → Canada entra en Power Play
-    ## -----------------------------------------------------------------------
-    #sancionada = usa.obtener_jugador(21)     # Hilary Knight
-    #minutos = 2
-#
-    #sancionada.sancionar(minutos)
-#
-    #print(f"\nRegistrando sanción para: {sancionada.nombre} ({minutos} minutos).")
-    #print(sancionada)
-    #if es_power_play(canada, usa):
-    #    print("¡ALERTA! Canada entra en Power Play.")
-#
+    # -----------------------------------------------------------------------
+    sancionada = usa.obtener_jugador(21)     # Hilary Knight
+    minutos = 2
+
+    sancionada.sancionar(minutos)
+
+    print(f"\nRegistrando sanción para: {sancionada.nombre} ({minutos} minutos).")
+    print(sancionada)
+    if es_power_play(canada, usa):
+        print("¡ALERTA! Canada entra en Power Play.")
+
     ## -----------------------------------------------------------------------
     ## Historia de usuario 3 — Gol de Canada en situación de Power Play
     ## -----------------------------------------------------------------------
-    #goleadora = canada.obtener_jugador(29)   # Brianne Jenner
-    #asistente = canada.obtener_jugador(19)   # Marie-Philip Poulin
-#
-    #goleadora.registrar_gol()
-    #asistente.registrar_asistencia()
-#
-    #marcador[canada.nombre] = canada.total_goles()
-#
-    #print(f"\nRegistrando gol para: {goleadora.nombre} y asistencia para {asistente.nombre}.")
-    #print(goleadora)
-    #print(asistente)
-    #print(f"\nMarcador: {mostrar_marcador(marcador, usa, canada)}.")
-#
+    goleadora = canada.obtener_jugador(29)   # Brianne Jenner
+    asistente = canada.obtener_jugador(19)   # Marie-Philip Poulin
+
+    goleadora.registrar_gol()
+    asistente.registrar_asistencia()
+
+    marcador[canada.nombre] = canada.total_goles()
+
+    print(f"\nRegistrando gol para: {goleadora.nombre} y asistencia para {asistente.nombre}.")
+    print(goleadora)
+    print(asistente)
+    print(f"\nMarcador: {mostrar_marcador(marcador, usa, canada)}.")
+
     ## -----------------------------------------------------------------------
     ## Historia de usuario 4 — La mesa intenta anotar un gol a USA pero la jugadora está sancionada
     ## -----------------------------------------------------------------------
 #
-    #goleadora = usa.obtener_jugador(21)     # Hilary Knight
-    #goleadora.registrar_gol()
-    #marcador[usa.nombre] = usa.total_goles()
-    #print(f"\nMarcador: {mostrar_marcador(marcador, usa, canada)}.")
-#
+    goleadora = usa.obtener_jugador(21)     # Hilary Knight
+    goleadora.registrar_gol()
+    marcador[usa.nombre] = usa.total_goles()
+    print(f"\nMarcador: {mostrar_marcador(marcador, usa, canada)}.")
+
     ## -----------------------------------------------------------------------
     ## Historia de usuario 5 — La jugadora sancionada sale de la Penalty Box
     ## -----------------------------------------------------------------------
-    #sancionada.liberar()
-    #print("\nJugadora liberada:")
-    #print(sancionada)
-    #if es_power_play(usa, canada):
-    #    print("¡ALERTA! USA entra en Power Play.")
-#
+    sancionada.liberar()
+    print("\nJugadora liberada:")
+    print(sancionada)
+    if es_power_play(usa, canada):
+        print("¡ALERTA! USA entra en Power Play.")
+
     ## -----------------------------------------------------------------------
     ## Historia de usuario 6 — Gol de Canada en situación normal
     ## -----------------------------------------------------------------------
-    #goleadora = canada.obtener_jugador(10)   # Sarah Fillier
-    #asistente = canada.obtener_jugador(24)   # Natalie Spooner
-#
-    #goleadora.registrar_gol()
-    #asistente.registrar_asistencia()
-#
-    #marcador[canada.nombre] = canada.total_goles()
-#
-    #print(f"\nRegistrando gol para: {goleadora.nombre} y asistencia para {asistente.nombre}.")
-    #print(goleadora)
-    #print(asistente)
-    #print(f"\nMarcador: {mostrar_marcador(marcador, usa, canada)}.")
+    goleadora = canada.obtener_jugador(10)   # Sarah Fillier
+    asistente = canada.obtener_jugador(24)   # Natalie Spooner
+
+    goleadora.registrar_gol()
+    asistente.registrar_asistencia()
+
+    marcador[canada.nombre] = canada.total_goles()
+
+    print(f"\nRegistrando gol para: {goleadora.nombre} y asistencia para {asistente.nombre}.")
+    print(goleadora)
+    print(asistente)
+    print(f"\nMarcador: {mostrar_marcador(marcador, usa, canada)}.")
 #
     ## -----------------------------------------------------------------------
     ## Historia de usuario 7 — Estadisticas de Canada al finalizar el partido
     ## -----------------------------------------------------------------------
-#
-    #canada.listar_jugadores()
-    #usa.listar_jugadores()
+
+    canada.listar_jugadores()
+    usa.listar_jugadores()
 
 if __name__ == "__main__":
     main()
