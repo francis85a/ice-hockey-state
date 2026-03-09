@@ -23,3 +23,27 @@ def test_registrar_gol():
     goleadora = ciudad.obtener_jugador(29)
     goleadora.registrar_gol()
     assert goleadora._goles == 1
+
+def test_registrar_asistencia():
+
+    ciudad = Equipo("Canada")
+    ciudad.añadir_jugador(Jugadora(29, "Marie-Philip Poulin",  Posicion.CENTER))
+    asistente = ciudad.obtener_jugador(29)
+    asistente.registrar_asistencia()
+    assert asistente._asistencias == 1
+
+def test_jugadora_activa():
+    ciudad = Equipo("Canada")
+    ciudad.añadir_jugador(Jugadora(29, "Marie-Philip Poulin",  Posicion.CENTER))
+    jugadora = ciudad.obtener_jugador(29)
+    assert jugadora.es_activo == True
+
+def test_total_goles():
+    ciudad = Equipo("Canada")
+    ciudad.añadir_jugador(Jugadora(29, "Marie-Philip Poulin",  Posicion.CENTER))
+    ciudad.añadir_jugador(Jugadora(19, "Brianne Jenner",       Posicion.CENTER))
+    goleadora1 = ciudad.obtener_jugador(29)
+    goleadora2 = ciudad.obtener_jugador(19)
+    goleadora1.registrar_gol()
+    goleadora2.registrar_gol()
+    assert ciudad.total_goles() == 2
