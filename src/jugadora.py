@@ -43,3 +43,13 @@ class Jugadora:
 
     def liberar(self):
         self._estado = Jugador_activo()
+
+    def __str__(self):
+        estado_str = "Activo" if self.es_activo else "Inactivo"
+        return (
+            f"{self._dorsal:>2}{self._nombre:<30}"
+            f"{self.posicion.value:<18}"
+            f"G:{self._goles} A :{self._asistencias} {estado_str}"
+        )
+    def __repr__(self):
+        return f"jugadora({self._dorsal}, '{self._nombre}', {self.posicion})"

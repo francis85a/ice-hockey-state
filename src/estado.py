@@ -1,9 +1,15 @@
-from src.jugadora import Jugadora
+from __future__ import annotations
+from abc import ABC, abstractmethod
+from typing import TYPE_CHECKING
 
-class Estado_jugador:
+if TYPE_CHECKING:
+    from src.jugadora import Jugadora
+
+class Estado_jugador(ABC):
+    @abstractmethod
     def registrar_gol(self, jugador: Jugadora):
         pass
-
+    @abstractmethod
     def registrar_asistencia(self, jugador: Jugadora):
         pass
 

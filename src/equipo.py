@@ -10,6 +10,9 @@ class Equipo:
         return self._nombre
 
     def añadir_jugador(self,jugadora):
+        if jugadora.dorsal in self._jugadores:
+            raise ValueError(
+                f"Ya existe un jugador con el dorsal {jugadora.dorsal} en {self._nombre}.")
 
         self._jugadores[jugadora.dorsal] = jugadora
 
@@ -17,7 +20,20 @@ class Equipo:
         print(self._jugadores)
 
     def obtener_jugador(self,dorsal):
-        self.dorsal = dorsal
-
+        if dorsal not in self._jugadores:
+            raise ValueError(
+                f"No existe un jugador con el dorsal {dorsal} en {self._nombre}.")
+        return self._jugadores[dorsal]
+    
     def jugadores_activos(self):
-        list.self._jugadores
+        for jugadora in self._jugadores.values():
+            if jugadora.es_activo:
+                return jugadora
+        return None
+    
+    def total_goles(self):
+        jugadoras= list(self._jugadores.values())
+        total = 0
+        for jugadora in jugadoras:
+            total += jugadora._goles
+        return total
